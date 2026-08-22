@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ohhavefun/groundlink",
+  "title": "Groundlink",
+  "description": "Cited web search for MCP hosts. Returns source-bearing results from Groundlink.",
+  "repository": {
+    "url": "https://github.com/ohhavefun/groundlink",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "groundlink-mcp",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "GROUNDLINK_API_KEY",
+          "description": "Groundlink API key used for every cited web-search request.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

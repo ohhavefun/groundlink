@@ -1,0 +1,46 @@
+{
+  "name": "groundlink-mcp",
+  "version": "0.1.1",
+  "description": "MCP server for Groundlink's cited web-search results.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Groundlink",
+    "url": "https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ohhavefun/groundlink"
+  },
+  "homepage": "https://github.com/ohhavefun/groundlink#readme",
+  "bugs": {
+    "url": "https://github.com/ohhavefun/groundlink/issues"
+  },
+  "bin": {
+    "groundlink-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "dev": "bun run src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "bun run test/smoke.ts",
+    "pack:check": "npm pack --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^5.9.0"
+  },
+  "mcpName": "io.github.ohhavefun/groundlink"
+}
