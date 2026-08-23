@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain-groundlink"
+version = "0.1.0"
+description = "LangChain tool that grounds AI answers with verified, cited web-search results from the Groundlink API."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Groundlink" },
+]
+keywords = ["langchain", "search", "grounding", "citation", "rag", "agent"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [
+  "langchain-core>=0.3.0",
+  "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4.0",
+]
+
+[project.urls]
+Homepage = "https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app"
+Documentation = "https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs"
+"Source Code" = "https://github.com/ohhavefun/groundlink"
+
+[tool.setuptools.packages.find]
+include = ["langchain_groundlink*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
