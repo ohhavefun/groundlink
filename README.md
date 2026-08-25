@@ -26,6 +26,9 @@ There are two, both maintained here:
 
 Both use the same free trial keys (100 queries) from the Groundlink onboarding,
 then prepaid usage at $0.001/query.
+## Where Groundlink is listed
+[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/ohhavefun/groundlink)
+
 
 ---
 
