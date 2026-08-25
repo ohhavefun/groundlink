@@ -13,24 +13,30 @@ includes **100 free test queries**; after that usage is metered
 - Live API docs: https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs
 - Pricing & credits: https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/pricing
 
-## Install
+## Install (from GitHub — no PyPI)
+
+The package is intentionally **not on PyPI**; install it directly from this
+repository's `langchain-groundlink/` subfolder:
 
 ```bash
-pip install langchain-groundlink
+pip install "langchain-groundlink @ git+https://github.com/ohhavefun/groundlink#subdirectory=langchain-groundlink"
 ```
 
-## Quickstart
+> `#subdirectory=langchain-groundlink` matters: this repo also contains the
+> `groundlink-mcp` (TypeScript) server, so the root is not a Python project.
 
-You need a Groundlink API key (`glk_...`). Get a free trial key from the
-[documentation page](https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs),
-or ask the Groundlink operator for one. Set it as `GROUNDLINK_API_KEY` or pass
-it to the tool.
+## Quickstart (10 seconds)
+
+You need a Groundlink API key (`glk_...`). Get a **free trial key** (100
+queries) from the [documentation page](https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs)
+— click **"Get your free API key"** — or mint one in code with
+`GroundlinkSearchTool.get_trial_key()` (below). Set it as `GROUNDLINK_API_KEY`
+or pass it to the tool.
 
 ```python
 from langchain_groundlink import GroundlinkSearchTool
 
 tool = GroundlinkSearchTool()  # reads GROUNDLINK_API_KEY, or pass api_key="glk_..."
-
 result = tool.invoke({"query": "Who was Ada Lovelace?"})
 print(result)
 ```
