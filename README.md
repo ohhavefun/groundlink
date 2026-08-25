@@ -16,7 +16,51 @@ API key includes **100 free test queries**; after that, prepaid usage is
 - Live API documentation: https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs
 - Pricing and credits: https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/pricing
 
-## Tool
+This repository is the home of Groundlink's **official developer integrations**.
+There are two, both maintained here:
+
+| Integration | What it is | Install |
+| --- | --- | --- |
+| **groundlink-mcp** (MCP server) | Exposes Groundlink to any MCP host (Claude, Cursor, …) | `npm install -g groundlink-mcp` (also on the [official MCP registry](https://registry.modelcontextprotocol.io) as `io.github.ohhavefun/groundlink`) |
+| **langchain-groundlink** (Python/LangChain) | A `GroundlinkSearchTool` for Python agents | `pip install "langchain-groundlink @ git+https://github.com/ohhavefun/groundlink#subdirectory=langchain-groundlink"` |
+
+Both use the same free trial keys (100 queries) from the Groundlink onboarding,
+then prepaid usage at $0.001/query.
+
+---
+
+## langchain-groundlink (Python / LangChain)
+
+Use Groundlink's cited search from any Python agent or `BaseTool` pipeline.
+The tool returns source-bearing results (`title`, `url`, `snippet`, `source`)
+so your agent answers from evidence and can cite it.
+
+**Install from GitHub** (the package is intentionally not on PyPI):
+
+```bash
+pip install "langchain-groundlink @ git+https://github.com/ohhavefun/groundlink#subdirectory=langchain-groundlink"
+```
+
+**Quick usage (10 seconds):** get a free key from
+[the docs](https://9ea69cec60fa01f65bbb647a092bcbb4.ctonew.app/docs), then:
+
+```python
+from langchain_groundlink import GroundlinkSearchTool
+
+tool = GroundlinkSearchTool(api_key="glk_your_trial_key")  # or export GROUNDLINK_API_KEY
+result = tool.invoke({"query": "Who was Ada Lovelace?"})
+print(result)
+```
+
+Full usage, configuration, and error handling are in
+[`langchain-groundlink/README.md`](langchain-groundlink/README.md).
+
+---
+
+## Groundlink MCP Server
+
+Use Groundlink's cited web-search results from any Model Context Protocol (MCP)
+host below.
 
 | Field | Value |
 | --- | --- |
